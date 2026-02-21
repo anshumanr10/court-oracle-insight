@@ -21,13 +21,13 @@ const Index = () => {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-navy-gradient py-20">
+      <section className="bg-earth-gradient py-20">
         <div className="container mx-auto max-w-4xl px-6 text-center">
           <div className="mb-4 flex justify-center">
             <Scale className="h-10 w-10 text-accent" />
           </div>
           <h1 className="font-display text-4xl font-bold text-primary-foreground md:text-5xl">
-            Supreme Court <span className="text-gradient-gold">Predictions</span>
+            Supreme Court <span className="text-gradient-accent">Predictions</span>
           </h1>
           <p className="mx-auto mt-4 max-w-xl font-body text-base text-primary-foreground/60 leading-relaxed">
             Our AI-powered model analyzes case briefs, oral arguments, and historical patterns

@@ -43,10 +43,10 @@ const Technology = () => {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-navy-gradient py-20">
+      <section className="bg-earth-gradient py-20">
         <div className="container mx-auto max-w-3xl px-6 text-center">
           <h1 className="font-display text-4xl font-bold text-primary-foreground md:text-5xl">
-            The <span className="text-gradient-gold">Technology</span>
+            The <span className="text-gradient-accent">Technology</span>
           </h1>
           <p className="mx-auto mt-4 max-w-xl font-body text-base text-primary-foreground/60 leading-relaxed">
             A deep dive into the machine learning pipeline that powers our Supreme Court outcome predictions.
@@ -67,7 +67,7 @@ const Technology = () => {
                 className="relative flex gap-6 md:gap-8 animate-fade-in"
                 style={{ animationDelay: `${i * 100}ms` }}
               >
-                <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-navy border-2 border-gold md:h-16 md:w-16">
+                <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-earth border-2 border-primary md:h-16 md:w-16">
                   <step.icon className="h-5 w-5 text-accent md:h-6 md:w-6" />
                 </div>
                 <div className="pt-1">
