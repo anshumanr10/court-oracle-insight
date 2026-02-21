@@ -24,30 +24,30 @@ const Index = () => {
       <section className="bg-earth-gradient py-20">
         <div className="container mx-auto max-w-4xl px-6 text-center">
           <div className="mb-4 flex justify-center">
-            <Scale className="h-10 w-10 text-accent" />
+            <Scale className="h-10 w-10 text-primary" />
           </div>
-          <h1 className="font-display text-4xl font-bold text-primary-foreground md:text-5xl">
+          <h1 className="font-display text-4xl font-bold text-foreground md:text-5xl">
             Supreme Court <span className="text-gradient-accent">Predictions</span>
           </h1>
-          <p className="mx-auto mt-4 max-w-xl font-body text-base text-primary-foreground/60 leading-relaxed">
+          <p className="mx-auto mt-4 max-w-xl font-body text-base text-muted-foreground leading-relaxed">
             Our AI-powered model analyzes case briefs, oral arguments, and historical patterns
             to predict Supreme Court outcomes before decisions are announced.
           </p>
           <div className="mt-8 flex justify-center gap-8">
             <div className="text-center">
-              <p className="font-display text-3xl font-bold text-accent">{cases.length}</p>
-              <p className="font-body text-xs text-primary-foreground/50 uppercase tracking-wider">Cases Analyzed</p>
+              <p className="font-display text-3xl font-bold text-primary">{cases.length}</p>
+              <p className="font-body text-xs text-muted-foreground uppercase tracking-wider">Cases Analyzed</p>
             </div>
             <div className="text-center">
-              <p className="font-display text-3xl font-bold text-accent">{accuracy}%</p>
-              <p className="font-body text-xs text-primary-foreground/50 uppercase tracking-wider">Accuracy</p>
+              <p className="font-display text-3xl font-bold text-primary">{accuracy}%</p>
+              <p className="font-body text-xs text-muted-foreground uppercase tracking-wider">Accuracy</p>
             </div>
             <div className="text-center flex flex-col items-center">
               <div className="flex items-center gap-1">
-                <CheckCircle2 className="h-6 w-6 text-emerald-400" />
-                <p className="font-display text-3xl font-bold text-primary-foreground">{correctCount}/{cases.length}</p>
+                <CheckCircle2 className="h-6 w-6 text-emerald-500" />
+                <p className="font-display text-3xl font-bold text-foreground">{correctCount}/{cases.length}</p>
               </div>
-              <p className="font-body text-xs text-primary-foreground/50 uppercase tracking-wider">Correct</p>
+              <p className="font-body text-xs text-muted-foreground uppercase tracking-wider">Correct</p>
             </div>
           </div>
         </div>

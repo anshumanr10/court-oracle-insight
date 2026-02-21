@@ -45,10 +45,10 @@ const Technology = () => {
       {/* Hero */}
       <section className="bg-earth-gradient py-20">
         <div className="container mx-auto max-w-3xl px-6 text-center">
-          <h1 className="font-display text-4xl font-bold text-primary-foreground md:text-5xl">
+          <h1 className="font-display text-4xl font-bold text-foreground md:text-5xl">
             The <span className="text-gradient-accent">Technology</span>
           </h1>
-          <p className="mx-auto mt-4 max-w-xl font-body text-base text-primary-foreground/60 leading-relaxed">
+          <p className="mx-auto mt-4 max-w-xl font-body text-base text-muted-foreground leading-relaxed">
             A deep dive into the machine learning pipeline that powers our Supreme Court outcome predictions.
           </p>
         </div>
