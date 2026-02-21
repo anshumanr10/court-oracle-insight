@@ -24,8 +24,8 @@ const Index = () => {
       {/* Hero */}
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src={gavelBg} alt="" className="h-full w-full object-cover opacity-20" />
-          <div className="absolute inset-0 bg-background/70" />
+          <img src={gavelBg} alt="" className="h-full w-full object-cover opacity-35" />
+          <div className="absolute inset-0 bg-background/50" />
         </div>
         <div className="relative z-10 container mx-auto max-w-4xl px-6 text-center">
           <div className="mb-4 flex justify-center">
