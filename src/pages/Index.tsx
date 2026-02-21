@@ -3,6 +3,7 @@ import { cases, CourtCase } from "@/data/cases";
 import CaseCard from "@/components/CaseCard";
 import CaseDetail from "@/components/CaseDetail";
 import { Scale, CheckCircle2 } from "lucide-react";
+import gavelBg from "@/assets/gavel-bg.jpg";
 
 const Index = () => {
   const [selectedCase, setSelectedCase] = useState<CourtCase | null>(null);
@@ -21,8 +22,12 @@ const Index = () => {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-earth-gradient py-20">
-        <div className="container mx-auto max-w-4xl px-6 text-center">
+      <section className="relative py-20 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img src={gavelBg} alt="" className="h-full w-full object-cover opacity-20" />
+          <div className="absolute inset-0 bg-background/70" />
+        </div>
+        <div className="relative z-10 container mx-auto max-w-4xl px-6 text-center">
           <div className="mb-4 flex justify-center">
             <Scale className="h-10 w-10 text-primary" />
           </div>
