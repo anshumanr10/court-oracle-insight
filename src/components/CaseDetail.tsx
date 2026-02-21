@@ -37,34 +37,34 @@ const CaseDetail = ({ courtCase, onBack }: CaseDetailProps) => {
 
       {/* Prediction vs Outcome */}
       <div className="mb-8 grid gap-4 md:grid-cols-3">
-        <div className="rounded-lg bg-earth p-5">
-          <div className="mb-2 flex items-center gap-2 text-primary-foreground/60">
+        <div className="rounded-lg bg-secondary p-5">
+          <div className="mb-2 flex items-center gap-2 text-muted-foreground">
             <TrendingUp className="h-4 w-4" />
             <span className="font-body text-xs font-medium uppercase tracking-wider">Our Prediction</span>
           </div>
-          <p className="font-display text-2xl font-bold text-accent">
+          <p className="font-display text-2xl font-bold text-primary">
             {outcomeLabel(courtCase.prediction)}
           </p>
-          <div className="mt-2 h-2 w-full rounded-full bg-earth/60 overflow-hidden">
+          <div className="mt-2 h-2 w-full rounded-full bg-muted overflow-hidden">
             <div
-              className="h-full rounded-full bg-accent transition-all duration-700"
+              className="h-full rounded-full bg-primary transition-all duration-700"
               style={{ width: `${courtCase.predictionConfidence * 100}%` }}
             />
           </div>
-          <p className="mt-1 font-body text-xs text-primary-foreground/50">
+          <p className="mt-1 font-body text-xs text-muted-foreground">
             {Math.round(courtCase.predictionConfidence * 100)}% confidence
           </p>
         </div>
 
-        <div className="rounded-lg bg-earth p-5">
-          <div className="mb-2 flex items-center gap-2 text-primary-foreground/60">
+        <div className="rounded-lg bg-secondary p-5">
+          <div className="mb-2 flex items-center gap-2 text-muted-foreground">
             <Gavel className="h-4 w-4" />
             <span className="font-body text-xs font-medium uppercase tracking-wider">Actual Outcome</span>
           </div>
-          <p className="font-display text-2xl font-bold text-primary-foreground">
+          <p className="font-display text-2xl font-bold text-foreground">
             {outcomeLabel(courtCase.actualOutcome)}
           </p>
-          <p className="mt-2 font-body text-xs text-primary-foreground/50">
+          <p className="mt-2 font-body text-xs text-muted-foreground">
             {courtCase.voteSplit} · {courtCase.majorityAuthor}
           </p>
         </div>
