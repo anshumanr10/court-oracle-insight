@@ -12,6 +12,7 @@ import {
   MessageSquare,
   Scaling,
 } from "lucide-react";
+import aiModelBg from "@/assets/ai-model-bg.jpg";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Separator } from "@/components/ui/separator";
@@ -191,8 +192,14 @@ const Technology = () => {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-earth-gradient py-20">
-        <div className="container mx-auto max-w-3xl px-6 text-center">
+      <section className="relative bg-earth-gradient py-20 overflow-hidden">
+        <img
+          src={aiModelBg}
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover opacity-30"
+        />
+        <div className="absolute inset-0 bg-background/60" />
+        <div className="container relative z-10 mx-auto max-w-3xl px-6 text-center">
           <h1 className="font-display text-4xl font-bold text-foreground md:text-5xl">
             The <span className="text-gradient-accent">Technology</span>
           </h1>
