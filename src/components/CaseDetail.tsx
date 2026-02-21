@@ -37,7 +37,7 @@ const CaseDetail = ({ courtCase, onBack }: CaseDetailProps) => {
 
       {/* Prediction vs Outcome */}
       <div className="mb-8 grid gap-4 md:grid-cols-3">
-        <div className="rounded-lg bg-navy p-5">
+        <div className="rounded-lg bg-earth p-5">
           <div className="mb-2 flex items-center gap-2 text-primary-foreground/60">
             <TrendingUp className="h-4 w-4" />
             <span className="font-body text-xs font-medium uppercase tracking-wider">Our Prediction</span>
@@ -45,7 +45,7 @@ const CaseDetail = ({ courtCase, onBack }: CaseDetailProps) => {
           <p className="font-display text-2xl font-bold text-accent">
             {outcomeLabel(courtCase.prediction)}
           </p>
-          <div className="mt-2 h-2 w-full rounded-full bg-navy-light overflow-hidden">
+          <div className="mt-2 h-2 w-full rounded-full bg-earth/60 overflow-hidden">
             <div
               className="h-full rounded-full bg-accent transition-all duration-700"
               style={{ width: `${courtCase.predictionConfidence * 100}%` }}
@@ -56,7 +56,7 @@ const CaseDetail = ({ courtCase, onBack }: CaseDetailProps) => {
           </p>
         </div>
 
-        <div className="rounded-lg bg-navy p-5">
+        <div className="rounded-lg bg-earth p-5">
           <div className="mb-2 flex items-center gap-2 text-primary-foreground/60">
             <Gavel className="h-4 w-4" />
             <span className="font-body text-xs font-medium uppercase tracking-wider">Actual Outcome</span>
