@@ -67,11 +67,10 @@ const baseModel = {
 
 // Preprocessing progress placeholder
 const preprocessingSteps = [
-{ step: "Raw text extraction", complete: 100 },
-{ step: "Citation normalization", complete: 100 },
-{ step: "Stop-word & legal boilerplate removal", complete: 100 },
-{ step: "Tokenization (WordPiece)", complete: 100 },
-{ step: "Feature engineering (200+ variables)", complete: 100 }];
+{ step: "Raw JSON", complete: 100 },
+{ step: "Clean Data", complete: 100 },
+{ step: "Chunking Transcripts", complete: 100 },
+{ step: "Train Model", complete: 100 }];
 
 
 // Token distribution chart data
