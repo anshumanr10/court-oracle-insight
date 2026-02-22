@@ -215,7 +215,7 @@ const Technology = () => {
         <section>
           <SectionHeading
             number="1"
-            title="Data, Tools & Base Model"
+            title="Data + Frameworks"
             subtitle="The foundation of our pipeline: curated legal datasets, modern ML frameworks, and a domain-adapted language model." />
 
 
