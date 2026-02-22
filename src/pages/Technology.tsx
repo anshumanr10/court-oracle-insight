@@ -66,11 +66,7 @@ const baseModel = {
 };
 
 // Preprocessing progress placeholder
-const preprocessingSteps = [
-{ step: "Raw JSON", complete: 100 },
-{ step: "Clean Data", complete: 100 },
-{ step: "Chunking Transcripts", complete: 100 },
-{ step: "Train Model", complete: 100 }];
+const preprocessingSteps = ["Raw JSON", "Clean Data", "Chunking Transcripts", "Train Model"];
 
 
 // Token distribution chart data
@@ -290,17 +286,19 @@ const Technology = () => {
             subtitle="How raw legal texts were transformed into model-ready features through cleaning, normalization, and tokenization." />
 
 
-          {/* Pipeline steps */}
+          {/* Pipeline flow */}
           <div className="mb-10">
-            <h3 className="font-display text-lg font-semibold text-foreground mb-4">Pipeline Progress</h3>
-            <div className="space-y-3">
-              {preprocessingSteps.map((s) =>
-              <div key={s.step} className="flex items-center gap-4">
-                  <span className="w-56 text-sm text-muted-foreground shrink-0">{s.step}</span>
-                  <Progress value={s.complete} className="h-2 flex-1" />
-                  <span className="text-xs font-medium text-foreground w-10 text-right">{s.complete}%</span>
+            <div className="flex flex-wrap items-center justify-center gap-2">
+              {preprocessingSteps.map((step, i) => (
+                <div key={step} className="flex items-center gap-2">
+                  <div className="rounded-lg border bg-card px-5 py-3 text-sm font-semibold text-foreground shadow-sm">
+                    {step}
+                  </div>
+                  {i < preprocessingSteps.length - 1 && (
+                    <span className="text-primary font-bold text-lg">→</span>
+                  )}
                 </div>
-              )}
+              ))}
             </div>
           </div>
 
