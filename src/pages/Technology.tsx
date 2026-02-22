@@ -13,6 +13,7 @@ import {
   Scaling } from
 "lucide-react";
 import aiModelBg from "@/assets/ai-model-bg.jpg";
+import modelArchitecture from "@/assets/model-architecture.png";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Separator } from "@/components/ui/separator";
@@ -339,10 +340,30 @@ OUTCOME: Respondent won.`}
 
         <Separator />
 
-        {/* ── SECTION 3: Hyperparameter Tuning ── */}
+        {/* ── SECTION 3: Model Architecture ── */}
         <section>
           <SectionHeading
             number="3"
+            title="Model Architecture"
+            subtitle="An overview of our end-to-end architecture — from transcript input through cross-attention to predicted justice votes." />
+
+          <Card>
+            <CardContent className="pt-6 flex justify-center">
+              <img
+                src={modelArchitecture}
+                alt="Model architecture diagram showing input transcript phases, encoder backbone, turn pooling, cross-attention, and output heads"
+                className="max-w-full h-auto rounded-md"
+              />
+            </CardContent>
+          </Card>
+        </section>
+
+        <Separator />
+
+        {/* ── SECTION 4: Hyperparameter Tuning ── */}
+        <section>
+          <SectionHeading
+            number="4"
             title="Hyperparameter Tuning & Feature Selection"
             subtitle="Systematic experiments to find optimal model configuration and identify the most impactful features." />
 
@@ -389,7 +410,7 @@ OUTCOME: Respondent won.`}
         {/* ── SECTION 4: Data Split & Benchmarks ── */}
         <section>
           <SectionHeading
-            number="4"
+            number="5"
             title="Data Split & Benchmarks"
             subtitle="Our train/validation/test methodology and how the model stacks up against established baselines." />
 
@@ -496,7 +517,7 @@ OUTCOME: Respondent won.`}
         {/* ── SECTION 5: Future Improvements ── */}
         <section>
           <SectionHeading
-            number="5"
+            number="6"
             title="Areas for Improvement"
             subtitle="Where we're headed next — expanding data inputs, incorporating new signal types, and scaling model capacity." />
 
