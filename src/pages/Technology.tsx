@@ -196,8 +196,8 @@ const Technology = () => {
 
         <div className="absolute inset-0 bg-background/60" />
         <div className="container relative z-10 mx-auto max-w-3xl px-6 text-center">
-          <h1 className="font-display text-4xl font-bold text-foreground md:text-5xl">Our Model
-            <span className="text-gradient-accent">Model</span>
+          <h1 className="font-display text-4xl font-bold text-foreground md:text-5xl">
+            Our <span className="text-gradient-accent">Model</span>
           </h1>
           <p className="mx-auto mt-4 max-w-xl font-body text-base text-muted-foreground leading-relaxed">
             A comprehensive look at how we built, trained, and evaluated our Supreme Court prediction model — from raw data to deployment.
