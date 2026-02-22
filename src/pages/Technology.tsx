@@ -4,10 +4,6 @@ import {
   Code2,
   FileText,
   BarChart3,
-  SlidersHorizontal,
-  PieChart,
-  TrendingUp,
-  Lightbulb,
   Mic,
   MessageSquare,
   Scaling } from
@@ -17,7 +13,6 @@ import modelArchitecture from "@/assets/model-architecture.png";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Separator } from "@/components/ui/separator";
-import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
 import {
   ChartContainer,
@@ -25,22 +20,10 @@ import {
   ChartTooltipContent } from
 "@/components/ui/chart";
 import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  LineChart,
-  Line,
   PieChart as RePieChart,
   Pie,
   Cell,
-  RadarChart,
-  Radar,
-  PolarGrid,
-  PolarAngleAxis,
-  PolarRadiusAxis } from
-"recharts";
+} from "recharts";
 
 /* ───────────────────────────────────────────
    PLACEHOLDER DATA — replace with real values
@@ -83,45 +66,7 @@ const tokenChartConfig = {
   count: { label: "Cases", color: "hsl(16 55% 42%)" }
 };
 
-// Cleaning impact chart
-const cleaningImpact = [
-{ stage: "Raw", accuracy: 62 },
-{ stage: "Cleaned", accuracy: 71 },
-{ stage: "Normalized", accuracy: 75 },
-{ stage: "Tokenized", accuracy: 78 },
-{ stage: "+ Features", accuracy: 83 }];
 
-
-const cleaningChartConfig = {
-  accuracy: { label: "Accuracy %", color: "hsl(16 55% 42%)" }
-};
-
-// Hyperparameter tuning data
-const hpLearningRate = [
-{ lr: "1e-5", f1: 0.74 },
-{ lr: "2e-5", f1: 0.81 },
-{ lr: "3e-5", f1: 0.83 },
-{ lr: "5e-5", f1: 0.79 },
-{ lr: "1e-4", f1: 0.68 }];
-
-
-const hpChartConfig = {
-  f1: { label: "F1 Score", color: "hsl(16 55% 42%)" }
-};
-
-// Feature ablation
-const featureAblation = [
-{ feature: "All features", f1: 0.83 },
-{ feature: "− Oral args", f1: 0.77 },
-{ feature: "− Justice history", f1: 0.75 },
-{ feature: "− Issue codes", f1: 0.80 },
-{ feature: "− Circuit origin", f1: 0.81 },
-{ feature: "− Amicus count", f1: 0.82 }];
-
-
-const ablationChartConfig = {
-  f1: { label: "F1 Score", color: "hsl(16 45% 62%)" }
-};
 
 // Data split
 const dataSplit = [
@@ -130,19 +75,6 @@ const dataSplit = [
 { name: "Test", value: 15, color: "hsl(36 33% 72%)" }];
 
 
-// Benchmark results
-const benchmarks = [
-{ metric: "Accuracy", ours: 83, baseline: 66 },
-{ metric: "Precision", ours: 85, baseline: 64 },
-{ metric: "Recall", ours: 81, baseline: 68 },
-{ metric: "F1 Score", ours: 83, baseline: 66 },
-{ metric: "AUC-ROC", ours: 89, baseline: 71 }];
-
-
-const benchmarkRadarConfig = {
-  ours: { label: "Our Model", color: "hsl(16 55% 42%)" },
-  baseline: { label: "Baseline", color: "hsl(36 33% 72%)" }
-};
 
 // Future improvements
 const improvements = [
@@ -360,153 +292,45 @@ OUTCOME: Respondent won.`}
 
         <Separator />
 
-        {/* ── SECTION 4: Hyperparameter Tuning ── */}
+        {/* ── SECTION 4: Data Split ── */}
         <section>
           <SectionHeading
             number="4"
-            title="Hyperparameter Tuning & Feature Selection"
-            subtitle="Systematic experiments to find optimal model configuration and identify the most impactful features." />
+            title="Data Split"
+            subtitle="Our train/validation/test methodology for partitioning the Supreme Court case dataset." />
 
+          <Card className="max-w-lg mx-auto">
+            <CardHeader>
+              <CardTitle className="text-sm">Data Split</CardTitle>
+            </CardHeader>
+            <CardContent className="flex flex-col items-center">
+              <ChartContainer config={{}} className="h-[250px] w-full">
+                <RePieChart>
+                  <Pie
+                    data={dataSplit}
+                    cx="50%"
+                    cy="50%"
+                    innerRadius={60}
+                    outerRadius={90}
+                    paddingAngle={3}
+                    dataKey="value"
+                    nameKey="name"
+                    label={({ name, value }) => `${name} ${value}%`}>
 
-          <div className="grid gap-6 md:grid-cols-2">
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-sm">Learning Rate vs. F1 Score</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ChartContainer config={hpChartConfig} className="h-[250px] w-full">
-                  <LineChart data={hpLearningRate}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="lr" fontSize={12} />
-                    <YAxis domain={[0.6, 0.9]} fontSize={12} />
-                    <ChartTooltip content={<ChartTooltipContent />} />
-                    <Line type="monotone" dataKey="f1" stroke="var(--color-f1)" strokeWidth={2} dot={{ r: 4 }} />
-                  </LineChart>
-                </ChartContainer>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-sm">Feature Ablation Study</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ChartContainer config={ablationChartConfig} className="h-[250px] w-full">
-                  <BarChart data={featureAblation} layout="vertical">
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis type="number" domain={[0.65, 0.85]} fontSize={12} />
-                    <YAxis dataKey="feature" type="category" fontSize={11} width={120} />
-                    <ChartTooltip content={<ChartTooltipContent />} />
-                    <Bar dataKey="f1" fill="var(--color-f1)" radius={[0, 4, 4, 0]} />
-                  </BarChart>
-                </ChartContainer>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
-        <Separator />
-
-        {/* ── SECTION 4: Data Split & Benchmarks ── */}
-        <section>
-          <SectionHeading
-            number="5"
-            title="Data Split & Benchmarks"
-            subtitle="Our train/validation/test methodology and how the model stacks up against established baselines." />
-
-
-          <div className="grid gap-6 md:grid-cols-2">
-            {/* Pie chart for split */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-sm">Data Split</CardTitle>
-              </CardHeader>
-              <CardContent className="flex flex-col items-center">
-                <ChartContainer config={{}} className="h-[250px] w-full">
-                  <RePieChart>
-                    <Pie
-                      data={dataSplit}
-                      cx="50%"
-                      cy="50%"
-                      innerRadius={60}
-                      outerRadius={90}
-                      paddingAngle={3}
-                      dataKey="value"
-                      nameKey="name"
-                      label={({ name, value }) => `${name} ${value}%`}>
-
-                      {dataSplit.map((entry, i) =>
-                      <Cell key={i} fill={entry.color} />
-                      )}
-                    </Pie>
-                    <ChartTooltip content={<ChartTooltipContent />} />
-                  </RePieChart>
-                </ChartContainer>
-                <div className="flex gap-4 mt-2">
-                  {dataSplit.map((d) =>
-                  <div key={d.name} className="flex items-center gap-1.5 text-xs text-muted-foreground">
-                      <div className="h-2.5 w-2.5 rounded-sm" style={{ backgroundColor: d.color }} />
-                      {d.name}
-                    </div>
-                  )}
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Radar chart for benchmarks */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-sm">Model vs. Baseline</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ChartContainer config={benchmarkRadarConfig} className="h-[250px] w-full">
-                  <RadarChart data={benchmarks}>
-                    <PolarGrid />
-                    <PolarAngleAxis dataKey="metric" fontSize={11} />
-                    <PolarRadiusAxis domain={[0, 100]} tick={false} />
-                    <Radar name="Our Model" dataKey="ours" stroke="hsl(16 55% 42%)" fill="hsl(16 55% 42%)" fillOpacity={0.25} />
-                    <Radar name="Baseline" dataKey="baseline" stroke="hsl(36 33% 72%)" fill="hsl(36 33% 72%)" fillOpacity={0.2} />
-                    <ChartTooltip content={<ChartTooltipContent />} />
-                  </RadarChart>
-                </ChartContainer>
-                <div className="flex justify-center gap-6 mt-2">
-                  <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
-                    <div className="h-2.5 w-2.5 rounded-sm" style={{ backgroundColor: "hsl(16 55% 42%)" }} />
-                    Our Model
-                  </div>
-                  <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
-                    <div className="h-2.5 w-2.5 rounded-sm" style={{ backgroundColor: "hsl(36 33% 72%)" }} />
-                    Baseline
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Metric summary table */}
-          <Card className="mt-6">
-            <CardContent className="pt-6">
-              <div className="overflow-x-auto">
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="border-b border-border">
-                      <th className="text-left py-2 font-display font-semibold text-foreground">Metric</th>
-                      <th className="text-center py-2 font-display font-semibold text-foreground">Our Model</th>
-                      <th className="text-center py-2 font-display font-semibold text-foreground">Baseline</th>
-                      <th className="text-center py-2 font-display font-semibold text-foreground">Δ</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {benchmarks.map((b) =>
-                    <tr key={b.metric} className="border-b border-border/50">
-                        <td className="py-2.5 text-muted-foreground">{b.metric}</td>
-                        <td className="py-2.5 text-center font-medium text-foreground">{b.ours}%</td>
-                        <td className="py-2.5 text-center text-muted-foreground">{b.baseline}%</td>
-                        <td className="py-2.5 text-center font-medium text-primary">+{b.ours - b.baseline}%</td>
-                      </tr>
+                    {dataSplit.map((entry, i) =>
+                    <Cell key={i} fill={entry.color} />
                     )}
-                  </tbody>
-                </table>
+                  </Pie>
+                  <ChartTooltip content={<ChartTooltipContent />} />
+                </RePieChart>
+              </ChartContainer>
+              <div className="flex gap-4 mt-2">
+                {dataSplit.map((d) =>
+                <div key={d.name} className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                    <div className="h-2.5 w-2.5 rounded-sm" style={{ backgroundColor: d.color }} />
+                    {d.name}
+                  </div>
+                )}
               </div>
             </CardContent>
           </Card>
@@ -517,7 +341,7 @@ OUTCOME: Respondent won.`}
         {/* ── SECTION 5: Future Improvements ── */}
         <section>
           <SectionHeading
-            number="6"
+            number="5"
             title="Areas for Improvement"
             subtitle="Where we're headed next — expanding data inputs, incorporating new signal types, and scaling model capacity." />
 
