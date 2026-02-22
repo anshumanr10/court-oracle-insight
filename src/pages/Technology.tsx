@@ -128,8 +128,8 @@ const Technology = () => {
 
         <div className="absolute inset-0 bg-background/60" />
         <div className="container relative z-10 mx-auto max-w-3xl px-6 text-center">
-          <h1 className="font-display text-4xl font-bold text-foreground md:text-5xl">Our Model
-            <span className="text-gradient-accent">Model</span>
+          <h1 className="font-display text-4xl font-bold text-foreground md:text-5xl">
+            Our <span className="text-gradient-accent">Model</span>
           </h1>
           <p className="mx-auto mt-4 max-w-xl font-body text-base text-muted-foreground leading-relaxed">
             A comprehensive look at how we built, trained, and evaluated our Supreme Court prediction model — from raw data to deployment.
@@ -151,7 +151,7 @@ const Technology = () => {
             <TabsList className="mb-6">
               <TabsTrigger value="data">Data Sources</TabsTrigger>
               <TabsTrigger value="frameworks">Frameworks & APIs</TabsTrigger>
-              <TabsTrigger value="model">Base Model</TabsTrigger>
+              
             </TabsList>
 
             <TabsContent value="data">
@@ -187,25 +187,6 @@ const Technology = () => {
               </div>
             </TabsContent>
 
-            <TabsContent value="model">
-              <Card>
-                <CardContent className="pt-6">
-                  <div className="flex flex-col md:flex-row md:items-start gap-6">
-                    <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl bg-primary/10">
-                      <Brain className="h-8 w-8 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-display text-lg font-bold text-foreground">{baseModel.name}</h3>
-                      <div className="flex gap-2 mt-2 mb-3">
-                        <Badge variant="outline">{baseModel.params} parameters</Badge>
-                        <Badge variant="secondary">{baseModel.pretraining}</Badge>
-                      </div>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{baseModel.description}</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
           </Tabs>
         </section>
 
