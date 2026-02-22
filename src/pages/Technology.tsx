@@ -302,42 +302,39 @@ const Technology = () => {
             </div>
           </div>
 
-          {/* Charts */}
-          <div className="grid gap-6 md:grid-cols-2">
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-sm">Token Length Distribution</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ChartContainer config={tokenChartConfig} className="h-[250px] w-full">
-                  <BarChart data={tokenDistribution}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="range" fontSize={12} />
-                    <YAxis fontSize={12} />
-                    <ChartTooltip content={<ChartTooltipContent />} />
-                    <Bar dataKey="count" fill="var(--color-count)" radius={[4, 4, 0, 0]} />
-                  </BarChart>
-                </ChartContainer>
-              </CardContent>
-            </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-sm">Example Case Transcript</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="rounded-md bg-muted/50 p-4 font-mono text-xs text-muted-foreground leading-relaxed max-h-[400px] overflow-y-auto whitespace-pre-wrap">
+{`DECIDED: Jun 11, 1956
 
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-sm">Accuracy by Preprocessing Stage</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ChartContainer config={cleaningChartConfig} className="h-[250px] w-full">
-                  <LineChart data={cleaningImpact}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="stage" fontSize={12} />
-                    <YAxis domain={[50, 90]} fontSize={12} />
-                    <ChartTooltip content={<ChartTooltipContent />} />
-                    <Line type="monotone" dataKey="accuracy" stroke="var(--color-accuracy)" strokeWidth={2} dot={{ r: 4 }} />
-                  </LineChart>
-                </ChartContainer>
-              </CardContent>
-            </Card>
-          </div>
+Warren
+Number 5 on the docket, United States of America versus E.I.du Pont de Nemours & Company. Mr. Weston.
+
+Petitioner
+If it please this Court. This suit was instituted late in 1947. The Government's complaint charged that du Pont had been monopolizing interstate commerce in cellophane from about 1923...
+
+Frankfurter
+Before you move on to the conclusion of law, what are we to understand as the Government's position in regards to what I call findings of fact, do you challenge any of them or all of them or what?
+
+...
+
+---
+JUSTICE VOTES:
+Warren: Petitioner
+Douglas: Petitioner
+Black: Petitioner
+Minton: Respondent
+Burton: Respondent
+Reed: Respondent
+Frankfurter: Respondent
+
+OUTCOME: Respondent won.`}
+              </div>
+            </CardContent>
+          </Card>
         </section>
 
         <Separator />
