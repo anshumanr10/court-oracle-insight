@@ -52,10 +52,9 @@ const dataSources = [
 
 
 const frameworks = [
-{ name: "Hugging Face Transformers", role: "NLP backbone", icon: Brain },
+{ name: "ModernBERT / DeBERTa", role: "Encoder", icon: Brain },
 { name: "PyTorch", role: "Training framework", icon: Code2 },
-{ name: "scikit-learn", role: "Classical ML & evaluation", icon: BarChart3 },
-{ name: "Pandas / NumPy", role: "Data wrangling", icon: Database }];
+{ name: "ConvoKit", role: "Transcript API", icon: MessageSquare }];
 
 
 const baseModel = {
