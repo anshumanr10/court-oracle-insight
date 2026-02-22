@@ -54,6 +54,7 @@ const dataSources = [
 const frameworks = [
 { name: "ModernBERT / DeBERTa", role: "Encoder", icon: Brain },
 { name: "PyTorch", role: "Training framework", icon: Code2 },
+{ name: "scikit-learn", role: "Classical ML & evaluation", icon: BarChart3 },
 { name: "ConvoKit", role: "Transcript API", icon: MessageSquare }];
 
 
