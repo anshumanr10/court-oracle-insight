@@ -219,7 +219,7 @@ const Technology = () => {
             <TabsList className="mb-6">
               <TabsTrigger value="data">Data Sources</TabsTrigger>
               <TabsTrigger value="frameworks">Frameworks & APIs</TabsTrigger>
-              <TabsTrigger value="model">Base Model</TabsTrigger>
+              
             </TabsList>
 
             <TabsContent value="data">
@@ -255,25 +255,6 @@ const Technology = () => {
               </div>
             </TabsContent>
 
-            <TabsContent value="model">
-              <Card>
-                <CardContent className="pt-6">
-                  <div className="flex flex-col md:flex-row md:items-start gap-6">
-                    <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl bg-primary/10">
-                      <Brain className="h-8 w-8 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-display text-lg font-bold text-foreground">{baseModel.name}</h3>
-                      <div className="flex gap-2 mt-2 mb-3">
-                        <Badge variant="outline">{baseModel.params} parameters</Badge>
-                        <Badge variant="secondary">{baseModel.pretraining}</Badge>
-                      </div>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{baseModel.description}</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
           </Tabs>
         </section>
 
