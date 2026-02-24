@@ -13,24 +13,32 @@ const Header = () => {
             SCOTUS<span className="text-primary">Predict</span>
           </span>
         </Link>
-        <nav className="flex gap-8">
-          <Link
-            to="/"
-            className={`font-body text-sm font-medium transition-colors hover:text-primary ${
-              location.pathname === "/" ? "text-primary" : "text-foreground/70"
-            }`}
-          >
-            Cases
-          </Link>
-          <Link
-            to="/technology"
-            className={`font-body text-sm font-medium transition-colors hover:text-primary ${
-              location.pathname === "/technology" ? "text-primary" : "text-foreground/70"
-            }`}
-          >
-            Technology
-          </Link>
-        </nav>
+        <div className="flex items-center gap-8">
+          <nav className="flex gap-8">
+            <Link
+              to="/"
+              className={`font-body text-sm font-medium transition-colors hover:text-primary ${
+                location.pathname === "/" ? "text-primary" : "text-foreground/70"
+              }`}
+            >
+              Cases
+            </Link>
+            <Link
+              to="/technology"
+              className={`font-body text-sm font-medium transition-colors hover:text-primary ${
+                location.pathname === "/technology" ? "text-primary" : "text-foreground/70"
+              }`}
+            >
+              Technology
+            </Link>
+          </nav>
+          <div className="hidden sm:flex items-center gap-1 text-xs text-muted-foreground font-body border-l border-border pl-6">
+            <span>Developed by</span>
+            <a href="https://linkedin.com/in/lee-davis-a26b941b7" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Lee Davis</a>
+            <span>&</span>
+            <a href="https://linkedin.com/in/anshumanranjan" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Anshuman Ranjan</a>
+          </div>
+        </div>
       </div>
     </header>
   );
