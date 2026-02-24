@@ -32,12 +32,12 @@ const Header = () => {
               Technology
             </Link>
           </nav>
-          <div className="hidden sm:flex items-center gap-1 text-xs text-muted-foreground font-body border-l border-border pl-6">
+          <div className="hidden sm:flex items-center gap-2 text-xs text-muted-foreground font-body border-l border-border pl-6">
             <span>Developed by</span>
             <a href="https://linkedin.com/in/lee-davis-a26b941b7" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Lee Davis</a>
             <span>&</span>
             <a href="https://linkedin.com/in/anshumanranjan" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Anshuman Ranjan</a>
-            <span>|</span>
+            <span>·</span>
             <a href="https://github.com/Ramora0/SupremeCourtGuess" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">GitHub</a>
           </div>
         </div>
