@@ -37,6 +37,8 @@ const Header = () => {
             <a href="https://linkedin.com/in/lee-davis-a26b941b7" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Lee Davis</a>
             <span>&</span>
             <a href="https://linkedin.com/in/anshumanranjan" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Anshuman Ranjan</a>
+            <span>|</span>
+            <a href="https://github.com/Ramora0/SupremeCourtGuess" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">GitHub</a>
           </div>
         </div>
       </div>
